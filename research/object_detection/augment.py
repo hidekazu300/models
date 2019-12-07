@@ -172,7 +172,7 @@ def Resize( size ,img ):
     
     return img_re
 
-def main(file_path , save_path , size , mode= [aug1,aug2,aug3,aug4,aug5]):
+def main(file_path , save_path , size , modes= [aug1,aug2,aug3,aug4,aug5]):
     files = os.listdir(path = file_path)
     num = int(len(files)/2)
     print("file num is " + str(num))
