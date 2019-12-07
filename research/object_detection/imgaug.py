@@ -188,26 +188,14 @@ def main(file_path , save_path , size , mode= [aug1,aug2,aug3,aug4,aug5]):
       img = cv.imread(file_path + '/' + file.split('.')[0] + '.jpg')
       bb = From_xml(file_path + '/' + file)
 
+      #augmentなし
+      cv.imwrite(save_path + '/' + file.split('.')[0]+".jpg", Resize( size , img ))
+      To_Resized_Xml( file.split('.')[0] , bb , size ,save_dir = save_path+'/')
+
+      #augmentするとき
       for j in range(len(modes)):
           aug_img , aug_bb = augment(img , bb ,modes[j])  
           resized_img = Resize( size , aug_img )
             
           cv.imwrite(save_path + '/' + file.split('.')[0] + '_' + str(j) +".jpg", resized_img)
           To_Resized_Xml( file.split('.')[0] + '_' + str(j) , aug_bb , size ,save_dir = save_path+'/')
-
-def test(file_path , save_path , size):
-    files = os.listdir(path = file_path)
-    num = int(len(files)/2)
-    print("file num is" + str(num))
-
-    for i in range(num):
-        print(file_path + files[2*i])
-    
-        img = cv.imread(file_path + files[2*i])
-        bb = From_xml(file_path + files[2*i+1])
-        
-        resized_img = Resize( size , img )
-        
-        cv.imwrite(save_path +str(i)+".jpg", resized_img)
-        To_Resized_Xml( str(i) , bb , size ,save_dir = save_path)
-  
