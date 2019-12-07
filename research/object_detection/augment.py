@@ -77,7 +77,6 @@ def From_xml(filename):
     
     return bb
 
-print(From_xml("2018_test.xml"))
 
 """バウンディングボックスからxmlを作る。save_dirは最後に／が必要なので注意"""
 
