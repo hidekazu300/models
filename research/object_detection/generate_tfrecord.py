@@ -29,22 +29,78 @@ FLAGS = flags.FLAGS
 
 # TO-DO replace this with label map
 def class_text_to_int(row_label):
-    if row_label == 'nine':
-        return 1
-    elif row_label == 'ten':
-        return 2
-    elif row_label == 'jack':
-        return 3
-    elif row_label == 'queen':
-        return 4
-    elif row_label == 'king':
-        return 5
-    elif row_label == 'ace':
-        return 6
+    if row_label == '1m':
+            return 1
+    elif row_label == '2m':
+            return 2
+    elif row_label == '3m':
+            return 3
+    elif row_label == '4m':
+            return 4
+    elif row_label == '5m':
+            return 5
+    elif row_label == '6m':
+            return 6
+    elif row_label == '7m':
+            return 7
+    elif row_label == '8m':
+            return 8
+    elif row_label == '9m':
+            return 9
+    elif row_label == '1p':
+            return 10
+    elif row_label == '2p':
+            return 11
+    elif row_label == '3p':
+            return 12
+    elif row_label == '4p':
+            return 13
+    elif row_label == '5p':
+            return 14
+    elif row_label == '6p':
+            return 15
+    elif row_label == '7p':
+            return 16
+    elif row_label == '8p':
+            return 17
+    elif row_label == '9p':
+            return 18
+    elif row_label == '1s':
+            return 19
+    elif row_label == '2s':
+            return 20
+    elif row_label == '3s':
+            return 21
+    elif row_label == '4s':
+            return 22
+    elif row_label == '5s':
+            return 23
+    elif row_label == '6s':
+            return 24
+    elif row_label == '7s':
+            return 25
+    elif row_label == '8s':
+            return 26
+    elif row_label == '9s':
+            return 27
+    elif row_label == 'east':
+            return 28
+    elif row_label == 'south':
+            return 29
+    elif row_label == 'west':
+            return 30
+    elif row_label == 'north':
+            return 31        
+    elif row_label == 'white':
+            return 32       
+    elif row_label == 'hatsu':
+            return 33        
+    elif row_label == 'tyun':
+            return 34
     else:
-        None
-
-
+            print(str(row_label))
+            return 0
+						
 def split(df, group):
     data = namedtuple('data', ['filename', 'object'])
     gb = df.groupby(group)
