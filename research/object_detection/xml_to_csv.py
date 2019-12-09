@@ -14,11 +14,11 @@ def xml_to_csv(path):
                      int(root.find('size')[0].text),
                      int(root.find('size')[1].text),
                      member[0].text,
-                     int(member[4][0].text),
-                     int(member[4][1].text),
-                     int(member[4][2].text),
-                     int(member[4][3].text)
-                     )
+                     int(member[1][0].text),
+                     int(member[1][1].text),
+                     int(member[1][2].text),
+                     int(member[1][3].text)
+                     )#形を合わせるため、４→1
             xml_list.append(value)
     column_name = ['filename', 'width', 'height', 'class', 'xmin', 'ymin', 'xmax', 'ymax']
     xml_df = pd.DataFrame(xml_list, columns=column_name)
